@@ -112,9 +112,4 @@ public class NewJREUtil {
             this.path = path;
         }
     }
-
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> upstream/v3_openjdk
