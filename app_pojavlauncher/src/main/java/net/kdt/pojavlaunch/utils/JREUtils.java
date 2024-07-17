@@ -508,7 +508,7 @@ public class JREUtils {
             case "vulkan_zink_standard":
                 renderLibrary = "libOSMesa_std.so";
                 break;
-            case "vulkan_zink_standard":
+            case "vulkan_zink_pojav":
                 renderLibrary = "libOSMesa_pjv.so";
                 break;
             case "swrast":
