@@ -256,7 +256,7 @@ int pojavInitOpenGL() {
     } else if (strncmp("opengles", renderer, 8) == 0) {
         solcraft_environ->config_renderer = RENDERER_GL4ES;
         set_gl_bridge_tbl();
-    } else if (strcmp(renderer, "vulkan_zink") == 0 || strcmp(renderer, "vulkan_zink_standard") == 0) {
+    } else if (strcmp(renderer, "vulkan_zink") == 0 || strcmp(renderer, "vulkan_zink_standard") == 0 || strcmp(renderer, "vulkan_zink_pojav") == 0) {
         solcraft_environ->config_renderer = RENDERER_VK_ZINK;
         load_vulkan();
         setenv("MESA_LOADER_DRIVER_OVERRIDE","zink",1);
@@ -271,15 +271,22 @@ int pojavInitOpenGL() {
         setenv("MESA_GL_VERSION_OVERRIDE", "3.2",false);
         setenv("MESA_GLSL_VERSION_OVERRIDE", "150",false);
         set_osm_bridge_tbl();
-    } else if (strcmp(renderer, "malihw_panfrost") == 0) {
+    } else if (strcmp(renderer, "malihw_panfrost") == 0 || strcmp(renderer, "panfrost_neo") == 0) {
         solcraft_environ->config_renderer = RENDERER_VK_ZINK;
         setenv("GALLIUM_DRIVER", "panfrost", 1);
+        //if (strcmp(renderer, "panfrost_neo") == 0)
+        //    setenv("MESA_LOADER_DRIVER_OVERRIDE","panfrost",1);
+        // May be needed
         setenv("PAN_DEBUG","gofaster",1);
         set_osm_bridge_tbl();
     } else if (strcmp(renderer, "adrhw_freedreno") == 0) {
         solcraft_environ->config_renderer = RENDERER_VK_ZINK;
         setenv("GALLIUM_DRIVER", "freedreno", 1);
         setenv("MESA_LOADER_DRIVER_OVERRIDE", "kgsl", 1);
+        set_osm_bridge_tbl();
+    } else if (strcmp(renderer, "swrast") == 0) {
+        solcraft_environ->config_renderer = RENDERER_VK_ZINK;
+        setenv("GALLIUM_DRIVER", "swrast", 1);
         set_osm_bridge_tbl();
     }
     if(solcraft_environ->config_renderer == RENDERER_VK_ZINK || solcraft_environ->config_renderer == RENDERER_GL4ES) {
