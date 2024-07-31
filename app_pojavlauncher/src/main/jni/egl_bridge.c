@@ -241,7 +241,7 @@ int pojavInitOpenGL() {
 
     // NOTE: Override for now.
     const char *renderer = getenv("POJAV_RENDERER");
-    if (strncmp("virgl", renderer, 15) == 0) {
+    if (strcmp(renderer, "virgl") == 0 || strcmp(renderer, "virgl_a") == 0) {
         solcraft_environ->config_renderer = RENDERER_VIRGL;
         setenv("GALLIUM_DRIVER","virpipe",1);
 #ifndef ADRENO_POSSIBLE

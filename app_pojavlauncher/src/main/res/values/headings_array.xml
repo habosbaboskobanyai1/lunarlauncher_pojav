@@ -9,6 +9,7 @@
         <item name="3">@string/mcl_setting_renderer_angle</item>
 
         <item name="5">@string/mcl_setting_renderer_virgl</item>
+        <item name="5a">@string/mcl_setting_renderer_virgl_a</item>
         <item name="6">@string/mcl_setting_renderer_panfrost</item>
         <item name="6a">@string/mcl_setting_renderer_panfrost_neo</item>
         <item name="7">@string/mcl_setting_renderer_freedreno</item>
@@ -53,6 +54,7 @@
         <item>opengles3_desktopgl_angle_vulkan</item>
 
         <item>virgl</item>
+        <item>virgl_a</item>
         <item>malihw_panfrost</item>
         <item>panfrost_neo</item>
         <item>adrhw_freedreno</item>

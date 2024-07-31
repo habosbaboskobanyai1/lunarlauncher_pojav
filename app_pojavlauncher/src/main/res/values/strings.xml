@@ -76,6 +76,7 @@
     <string name="mcl_setting_renderer_swrast">swrast (CPU) - (all versions, very slow)</string>
     <string name="mcl_setting_renderer_llvmpipe">llvmpipe (CPU) - (all versions, slow)</string>
     <string name="mcl_setting_renderer_virgl">virglrenderer - (1.7+ only, mid)</string>
+    <string name="mcl_setting_renderer_virgl_a">Ancient virglrenderer - (1.7+ only, slow)</string>
     <string name="mcl_setting_veroption_release">Release</string>
     <string name="mcl_setting_veroption_snapshot">Snapshot</string>
     <string name="mcl_setting_veroption_oldalpha">Old-alpha</string>
