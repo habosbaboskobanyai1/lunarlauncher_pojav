@@ -244,10 +244,10 @@ int pojavInitOpenGL() {
     if (strcmp(renderer, "virgl") == 0 || strcmp(renderer, "virgl_a") == 0) {
         solcraft_environ->config_renderer = RENDERER_VIRGL;
         setenv("GALLIUM_DRIVER","virpipe",1);
-#ifndef ADRENO_POSSIBLE
-        setenv("MESA_GL_VERSION_OVERRIDE", "3.3", 0);
-        setenv("MESA_GLSL_VERSION_OVERRIDE", "330", 0);
-#endif
+        if(!checkAdrenoGraphics())
+          setenv("MESA_GL_VERSION_OVERRIDE", "3.3", 0);
+          setenv("MESA_GLSL_VERSION_OVERRIDE", "330", 0);
+        }
         setenv("OSMESA_NO_FLUSH_FRONTBUFFER","1",false);
         if(strcmp(getenv("OSMESA_NO_FLUSH_FRONTBUFFER"),"1") == 0) {
             printf("VirGL: OSMesa buffer flush is DISABLED!\n");
