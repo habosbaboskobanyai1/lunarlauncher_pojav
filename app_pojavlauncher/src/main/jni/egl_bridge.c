@@ -244,7 +244,7 @@ int pojavInitOpenGL() {
     if (strncmp("virgl", renderer, 15) == 0) {
         solcraft_environ->config_renderer = RENDERER_VIRGL;
         setenv("GALLIUM_DRIVER","virpipe",1);
-        if(!checkAdrenoGraphics())
+        if(!checkAdrenoGraphics()) {
           setenv("MESA_GL_VERSION_OVERRIDE", "3.3", 0);
           setenv("MESA_GLSL_VERSION_OVERRIDE", "330", 0);
         }
