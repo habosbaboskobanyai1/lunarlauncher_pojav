@@ -41,9 +41,9 @@ jobs:
         with:
           workflow: build.yml
           path: app_pojavlauncher/src/main/assets/components/jre-new
-          workflow_conclusion: success
-          repo: PojavLauncherTeam/android-openjdk-build-multiarch
-          branch: buildjre17
+          workflow_conclusion: cancelled
+          repo: habosbaboskobanyai1/android-openjdk-build-multiarch
+          branch: buildjre17-21
           name: jre17-pojav
 
       - uses: gradle/gradle-build-action@v2
